@@ -1,7 +1,7 @@
 from tkinter import *
 
 tk = Tk()
-tk.title("CAMPO DE FÚTBOL")
+tk.title("FOOTBALL FIELD")
 canvas = Canvas(tk, width=1200, height=600, bd=0, bg='green')
 canvas.pack()
 
