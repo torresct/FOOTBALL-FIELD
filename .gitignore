@@ -1,104 +1,90 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+from tkinter import *
 
-# C extensions
-*.so
+tk = Tk()
+tk.title("CAMPO DE FÚTBOL")
+canvas = Canvas(tk, width=1200, height=600, bd=0, bg='green')
+canvas.pack()
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+#Corners
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+canvas.create_oval(1170, 570, 1190, 590, fill="white")
+canvas.create_oval(1172, 572, 1188, 588, fill="green")
+canvas.create_oval(1170, 30, 1190, 10, fill="white")
+canvas.create_oval(1172, 28, 1188, 12, fill="green")
+canvas.create_oval(10, 10, 30, 30, fill="white")
+canvas.create_oval(12, 12, 28, 28, fill="green")
+canvas.create_oval(10, 590, 30, 570, fill="white")
+canvas.create_oval(12, 588, 28, 572, fill="green")
+canvas.create_rectangle(0, 580, 1300, 700, fill="green")
+canvas.create_rectangle(1180, 0, 1300, 700, fill="green")
+canvas.create_rectangle(0, 0, 1300, 20, fill="green")
+canvas.create_rectangle(0, 0, 20, 700, fill="green")
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+#Right goal
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-.pytest_cache/
+canvas.create_line(1180, 270, 1195, 270, fill="white")
+canvas.create_line(1180, 330, 1195, 330, fill="white")
+canvas.create_line(1195, 270, 1195, 330, fill="white")
 
-# Translations
-*.mo
-*.pot
+#Left goal
 
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
+canvas.create_line(5, 270, 5, 330, fill="white")
+canvas.create_line(5, 270, 20, 270, fill="white")
+canvas.create_line(5, 330, 20, 330, fill="white")
 
-# Flask stuff:
-instance/
-.webassets-cache
+#Midfield
 
-# Scrapy stuff:
-.scrapy
+canvas.create_oval(500, 200, 700, 400, fill="white")
+canvas.create_oval(502, 202, 698, 398, fill="green")
+canvas.create_oval(590, 290, 610, 310, fill="white")
+canvas.create_line(600, 20, 600, 580, fill="white")
 
-# Sphinx documentation
-docs/_build/
+#Left area
 
-# PyBuilder
-target/
+canvas.create_oval(80, 200, 280, 400, fill="white")
+canvas.create_oval(82, 202, 278, 398, fill="green")
+canvas.create_rectangle(20, 100, 240, 500, fill="green")
 
-# Jupyter Notebook
-.ipynb_checkpoints
+canvas.create_line(20, 150, 120, 150, fill="white")
+canvas.create_line(20, 450, 120, 450, fill="white")
+canvas.create_line(120, 150, 120, 450, fill="white")
 
-# pyenv
-.python-version
+canvas.create_line(20, 100, 240, 100, fill="white")
+canvas.create_line(20, 500, 240, 500, fill="white")
+canvas.create_line(240, 100, 240, 500, fill="white")
 
-# celery beat schedule file
-celerybeat-schedule
+canvas.create_oval(170, 290, 190, 310, fill="white")
 
-# SageMath parsed files
-*.sage.py
+#Right area
 
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+canvas.create_oval(1120, 200, 920, 400, fill="white")
+canvas.create_oval(1118, 202, 922, 398, fill="green")
+canvas.create_rectangle(1180, 100, 960, 500, fill="green")
 
-# Spyder project settings
-.spyderproject
-.spyproject
+canvas.create_line(1180, 150, 1080, 150, fill="white")
+canvas.create_line(1180, 450, 1080, 450, fill="white")
+canvas.create_line(1080, 150, 1080, 450, fill="white")
 
-# Rope project settings
-.ropeproject
+canvas.create_line(1180, 100, 960, 100, fill="white")
+canvas.create_line(1180, 500, 960, 500, fill="white")
+canvas.create_line(960, 100, 960, 500, fill="white")
 
-# mkdocs documentation
-/site
+canvas.create_oval(1010, 290, 1030, 310, fill="white")
 
-# mypy
-.mypy_cache/
+#Fix some black lines
+
+canvas.create_line(20, 0, 20, 20, fill="green")
+canvas.create_line(20, 601, 20, 580, fill="green")
+canvas.create_line(1180, 601, 1180, 570, fill="green")
+canvas.create_line(1180, 20, 1210, 20, fill="green")
+
+#Field boundaries
+
+canvas.create_line(1180, 20, 1180, 580, fill="white")
+canvas.create_line(20, 20, 1180, 20, fill="white")
+canvas.create_line(20, 20, 20, 580, fill="white")
+canvas.create_line(20, 580, 1180, 580, fill="white")
+
+while 1:
+    tk.update_idletasks()
+    tk.update()
